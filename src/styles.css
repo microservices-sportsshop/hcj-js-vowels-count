@@ -41,13 +41,21 @@ body {
   padding: 0 20px;
 }
 
-.palindrome {
+.vowelscount {
   width: 60rem;
   background: var(--white);
   padding: 5rem 3rem;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 1px rgba(248, 175, 92, 0.9);
   border: 2px solid var(--color-sec);
+}
+
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
 }
 
 .input-and-buttons {
@@ -69,7 +77,8 @@ body {
 
 .btn {
   width: 25%;
-  margin-left: 10px; /* Add margin to create space between the buttons */
+  margin-left: 10px;
+  /* Add margin to create space between the buttons */
   padding: 1rem 5px;
   outline: none;
   border-radius: 3px;

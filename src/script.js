@@ -1,32 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const btnCheck = document.querySelector(".btn");
+    const btnCount = document.querySelector(".btn");
     const btnReset = document.querySelector(".reset");
     const result = document.querySelector(".result");
 
-    const isPalindrome = (str) => {
-        const len = str.length;
-        const start = str.substring(0, Math.floor(len / 2)).toLowerCase();
-        const end = str.substring(len - Math.floor(len / 2)).toLowerCase();
-        const reverseEnd = [...end].reverse().join("");
-        return start === reverseEnd;
-    };
+    const countVowel = () => {
+        const word = document.querySelector(".input-text").value.trim(); // Get the word value inside the function
+        let vowelCount = 0;
 
-    const checkPalindrome = () => {
-        const word = document.querySelector(".input-text").value.trim();
+        console.log('Word: ', word);
 
-        if (word === "") {
-            result.innerHTML = "Please enter a word.";
-            return;
+        let wordVal = word.toLowerCase();
+
+        for (let i = 0; i < wordVal.length; i++) {
+            let letter = wordVal[i];
+            if (letter.match(/([a,e,i,o,u])/)) {
+                vowelCount++;
+            }
         }
 
-        result.innerHTML = `${word.toUpperCase()} is ${isPalindrome(word) ? '' : 'NOT '}a palindrome`;
+        result.innerHTML = `${word.toUpperCase()} has ${vowelCount} vowels`;
     };
 
     const resetForm = () => {
         document.querySelector(".input-text").value = "";
-        result.innerHTML = "Enter a word to verify whether it is a Palindrome OR not";
+        result.innerHTML = "Enter a word to count vowels";
     };
 
-    btnCheck.addEventListener("click", checkPalindrome);
+    btnCount.addEventListener("click", countVowel);
     btnReset.addEventListener("click", resetForm);
 });
