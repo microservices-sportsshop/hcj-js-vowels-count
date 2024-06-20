@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const btnCount = document.querySelector(".btn");
-    const btnReset = document.querySelector(".reset");
+    const btnCount = document.querySelector(".btn:not(.reset)");
+    const btnReset = document.querySelector(".btn.reset");
     const result = document.querySelector(".result");
 
     const countVowel = () => {
@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         let vowelCount = 0;
-        let wordVal = word.toLowerCase();
+        const wordVal = word.toLowerCase();
 
         for (let i = 0; i < wordVal.length; i++) {
-            let letter = wordVal[i];
+            const letter = wordVal[i];
             if (letter.match(/[aeiou]/)) {
                 vowelCount++;
             }
