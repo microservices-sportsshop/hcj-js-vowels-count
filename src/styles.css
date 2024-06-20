@@ -2,13 +2,8 @@
 
 :root {
   --white: #fff;
-  --black: #1c2b2d;
-  --blue: #31326f;
-  --light-blue: #005490;
-  --light-blue-border: #68d2f9;
   --color-primary: #9d0191;
   --color-sec: #db6400;
-  --color-grey: #eee;
   --color-dark-grey: #222831;
 }
 
@@ -78,7 +73,6 @@ body {
 .btn {
   width: 25%;
   margin-left: 10px;
-  /* Add margin to create space between the buttons */
   padding: 1rem 5px;
   outline: none;
   border-radius: 3px;
