@@ -4,16 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = document.querySelector(".result");
 
     const countVowel = () => {
-        const word = document.querySelector(".input-text").value.trim(); // Get the word value inside the function
+        const word = document.querySelector(".input-text").value.trim();
+
+        if (word === "") {
+            result.innerHTML = "Please enter a word.";
+            return;
+        }
+
         let vowelCount = 0;
-
-        console.log('Word: ', word);
-
         let wordVal = word.toLowerCase();
 
         for (let i = 0; i < wordVal.length; i++) {
             let letter = wordVal[i];
-            if (letter.match(/([aeiou])/)) {
+            if (letter.match(/[aeiou]/)) {
                 vowelCount++;
             }
         }
